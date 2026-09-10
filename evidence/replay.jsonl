@@ -1,0 +1,30 @@
+{"ts": 1789082499.514446, "event": "step_start", "step_id": "s01", "action": "type", "target": "Member Number"}
+{"ts": 1789082499.566709, "event": "step_ok", "step_id": "s01", "url": "about:blank#home"}
+{"ts": 1789082499.5668402, "event": "step_start", "step_id": "s02", "action": "click", "target": "Find Member"}
+{"ts": 1789082499.689389, "event": "step_ok", "step_id": "s02", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.6895518, "event": "step_start", "step_id": "s03", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789082499.707561, "event": "step_ok", "step_id": "s03", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.707684, "event": "step_start", "step_id": "s04", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789082499.714328, "event": "step_ok", "step_id": "s04", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.714438, "event": "step_start", "step_id": "s05", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789082499.722871, "event": "step_ok", "step_id": "s05", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.723128, "event": "step_start", "step_id": "s06", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789082499.7349062, "event": "step_ok", "step_id": "s06", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.7350478, "event": "step_start", "step_id": "s07", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789082499.7457001, "event": "step_ok", "step_id": "s07", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082499.750147, "event": "finish", "outputs": {"savings_balance": "[REDACTED]"}}
+{"ts": 1789082654.7549949, "event": "step_start", "step_id": "s01", "action": "type", "target": "Member Number"}
+{"ts": 1789082654.8664708, "event": "step_ok", "step_id": "s01", "url": "about:blank#home"}
+{"ts": 1789082654.8666291, "event": "step_start", "step_id": "s02", "action": "click", "target": "Find Member"}
+{"ts": 1789082655.070244, "event": "step_ok", "step_id": "s02", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789082655.0704262, "event": "step_start", "step_id": "s03", "action": "click", "target": "Open new sub-account"}
+{"ts": 1789082655.218063, "event": "step_ok", "step_id": "s03", "url": "about:blank#subaccount?member=[PARAM:member_id]"}
+{"ts": 1789082655.223468, "event": "step_start", "step_id": "s04", "action": "select", "target": "Product"}
+{"ts": 1789082655.279223, "event": "step_ok", "step_id": "s04", "url": "about:blank#subaccount?member=[PARAM:member_id]"}
+{"ts": 1789082655.279594, "event": "step_start", "step_id": "s05", "action": "type", "target": "Opening deposit"}
+{"ts": 1789082655.300812, "event": "step_ok", "step_id": "s05", "url": "about:blank#subaccount?member=[PARAM:member_id]"}
+{"ts": 1789082655.3009422, "event": "step_start", "step_id": "s06", "action": "click", "target": "Review account"}
+{"ts": 1789082655.4461818, "event": "step_ok", "step_id": "s06", "url": "about:blank#review?member=[PARAM:member_id]&product=[PARAM:product]&deposit=[PARAM:deposit]"}
+{"ts": 1789082655.4464462, "event": "step_start", "step_id": "s07", "action": "human_gate", "target": "Submit and create account"}
+{"ts": 1789082665.9791842, "event": "human_handoff", "step_id": "s07", "request_id": "b1c3bbfd", "actions": [{"type": "click", "tag": "BUTTON", "text": "Submit and create account", "ts": 1789082662836}]}
+{"ts": 1789082665.992249, "event": "finish", "outputs": {}}

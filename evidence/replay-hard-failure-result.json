@@ -1,0 +1,14 @@
+{
+  "status": "failure",
+  "capability_id": "cap_4353f89f5e",
+  "outputs": {},
+  "outcome_code": "PERMISSION_DENIED",
+  "message": "PERMISSION_DENIED",
+  "failure_class": "hard",
+  "step_id": null,
+  "expected": "kind='text_visible' value='Savings balance' target=None",
+  "observed": "('hard', 'PERMISSION_DENIED')",
+  "evidence": {
+    "screenshot": "evidence/screenshots/failure-permission.png"
+  }
+}

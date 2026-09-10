@@ -1,0 +1,6 @@
+{"ts": 1788990886.6476977, "event": "step_start", "step_id": "s01", "action": "type", "target": "Member Number"}
+{"ts": 1788990886.6591735, "event": "step_ok", "step_id": "s01", "url": "about:blank#home"}
+{"ts": 1788990886.659235, "event": "step_start", "step_id": "s02", "action": "click", "target": "Find Member"}
+{"ts": 1788990886.7468412, "event": "step_ok", "step_id": "s02", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1788990886.7469156, "event": "step_start", "step_id": "s03", "action": "read", "target": "output:savings_balance"}
+{"ts": 1788990886.7497637, "event": "business_outcome", "step_id": "s03", "code": "MEMBER_NOT_FOUND"}

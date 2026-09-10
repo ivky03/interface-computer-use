@@ -1,0 +1,27 @@
+{
+  "allowed_origins": [
+    "demo://legacy-bank"
+  ],
+  "allowed_path_prefixes": [
+    "/",
+    ""
+  ],
+  "allowed_actions": [
+    "navigate",
+    "click",
+    "type",
+    "select",
+    "read",
+    "wait",
+    "human_gate"
+  ],
+  "irreversible_action_policy": "human",
+  "allowed_fragment_routes": [
+    "home",
+    "member",
+    "subaccount",
+    "review",
+    "complete",
+    "error"
+  ]
+}

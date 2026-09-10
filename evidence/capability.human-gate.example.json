@@ -1,0 +1,221 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "cap_open_subaccount_human_commit",
+  "capability_version": "1.0.0",
+  "name": "open_subaccount_human_commit",
+  "description": "Open a new sub-account for member {{member_id}}; automation prepares review and a human performs the irreversible commit.",
+  "app_id": "legacy-bank-demo",
+  "vendor_product": "Acme Legacy Core",
+  "tenant_variant": "base",
+  "entrypoint": "demo://legacy-bank#home",
+  "allowed_origins": [
+    "demo://legacy-bank"
+  ],
+  "parameters": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "description": "",
+      "sensitive": true,
+      "required": true
+    },
+    {
+      "name": "product",
+      "type": "string",
+      "description": "",
+      "sensitive": false,
+      "required": true
+    },
+    {
+      "name": "deposit",
+      "type": "string",
+      "description": "",
+      "sensitive": false,
+      "required": true
+    }
+  ],
+  "outputs": [],
+  "steps": [
+    {
+      "id": "s01",
+      "action": "type",
+      "target": {
+        "description": "Member Number",
+        "strategies": [
+          {
+            "kind": "label",
+            "value": "Member Number",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "name",
+            "value": "member",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": "{{member_id}}",
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s02",
+      "action": "click",
+      "target": {
+        "description": "Find Member",
+        "strategies": [
+          {
+            "kind": "role",
+            "value": "Find Member",
+            "role": "button",
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s03",
+      "action": "click",
+      "target": {
+        "description": "Open new sub-account",
+        "strategies": [
+          {
+            "kind": "role",
+            "value": "Open new sub-account",
+            "role": "button",
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s04",
+      "action": "select",
+      "target": {
+        "description": "Product",
+        "strategies": [
+          {
+            "kind": "label",
+            "value": "Product",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "name",
+            "value": "product",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": "{{product}}",
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s05",
+      "action": "type",
+      "target": {
+        "description": "Opening deposit",
+        "strategies": [
+          {
+            "kind": "label",
+            "value": "Opening deposit",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "name",
+            "value": "deposit",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": "{{deposit}}",
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s06",
+      "action": "click",
+      "target": {
+        "description": "Review account",
+        "strategies": [
+          {
+            "kind": "role",
+            "value": "Review account",
+            "role": "button",
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": null,
+      "risk": "reversible",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s07",
+      "action": "human_gate",
+      "target": {
+        "description": "Submit and create account",
+        "strategies": [
+          {
+            "kind": "role",
+            "value": "Submit and create account",
+            "role": "button",
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": null,
+      "risk": "irreversible",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    }
+  ],
+  "success_checkpoint": {
+    "kind": "text_visible",
+    "value": "Account created",
+    "target": null
+  },
+  "approved_for_unattended_replay": false,
+  "metadata": {
+    "purpose": "human handoff demonstration"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "request_id": "b1c3bbfd",
+  "session_id": "b5843aa7",
+  "capability_id": "cap_open_subaccount_human_commit",
+  "goal": "Open a new sub-account for member {{member_id}}; automation prepares review and a human performs the irreversible commit.",
+  "step_id": "s07",
+  "reason": "human approval/manual action required",
+  "current_url": "about:blank#review?member=[PARAM:member_id]&product=[PARAM:product]&deposit=[PARAM:deposit]",
+  "screenshot_path": "/Users/vigneshkumar/Desktop/Projects/interface-computer-use/evidence/screenshots/intervention-b1c3bbfd.png",
+  "control_owner": "human"
+}

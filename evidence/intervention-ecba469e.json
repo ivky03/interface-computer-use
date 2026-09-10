@@ -1,0 +1,11 @@
+{
+  "request_id": "ecba469e",
+  "session_id": "f7fee51e",
+  "capability_id": "cap_open_subaccount_human_commit",
+  "goal": "Open a new sub-account for member {{member_id}}; automation prepares review and a human performs the irreversible commit.",
+  "step_id": "s07",
+  "reason": "human approval/manual action required",
+  "current_url": "about:blank#review?member=[PARAM:member_id]&product=[PARAM:product]&deposit=[PARAM:deposit]",
+  "screenshot_path": "evidence/screenshots/intervention-ecba469e.png",
+  "control_owner": "human"
+}

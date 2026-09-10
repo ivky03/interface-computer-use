@@ -1,0 +1,12 @@
+{
+  "status": "business_outcome",
+  "capability_id": "cap_4353f89f5e",
+  "outputs": {},
+  "outcome_code": "MEMBER_NOT_FOUND",
+  "message": "MEMBER_NOT_FOUND",
+  "failure_class": "business",
+  "step_id": "s03",
+  "expected": null,
+  "observed": null,
+  "evidence": {}
+}

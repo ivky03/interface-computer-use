@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Acme Legacy Core</title>
+<style>body{font-family:Arial;margin:36px;background:#ece9d8;color:#111}table{border-collapse:collapse;background:white}td,th{border:1px solid #777;padding:8px}.box{border:2px outset #aaa;background:#f5f5f5;padding:16px;width:680px}.error{background:#ffd8d8;padding:10px;border:1px solid #900}.notice{background:#fff3bf;padding:10px;border:1px solid #886b00}</style></head>
+<body><h2>ACME CORE SERVICING v7.4</h2><div class="box"></div>
+<script>
+const MEMBERS={"12345":{name:"Avery Demo",savings:"$4,281.73"},"24680":{name:"Jordan Example",savings:"$912.14"}};
+const box=()=>document.querySelector('.box');
+function params(){let h=location.hash.slice(1), [route,q='']=h.split('?'); return {route:route||'home', q:new URLSearchParams(q)}}
+function go(route,q={}){location.hash=route+(Object.keys(q).length?'?'+new URLSearchParams(q):''); render()}
+function render(){const {route,q}=params();
+ if(route==='home'){box().innerHTML=`<form><table><tr><td><label>Member Number <input name="member"></label></td></tr></table><p><button type="submit">Find Member</button></p></form>`; box().querySelector('form').onsubmit=e=>{e.preventDefault();go('member',{member:e.target.member.value})};}
+ else if(route==='member'){let id=q.get('member')||'', scenario=q.get('scenario')||''; if(scenario==='permission'){box().innerHTML=`<div class="error">Permission denied: servicing role required.</div><button onclick="go('home')">Return</button>`;return;} if(!MEMBERS[id]){box().innerHTML=`<div class="notice">No member found for that number.</div><button onclick="go('home')">New search</button>`;return;} let m=MEMBERS[id]; let expired=scenario==='expired'?`<div class="notice" class="session">Session expired. <button onclick="this.parentElement.remove()">Continue session</button></div>`:''; box().innerHTML=`${expired}<table><tr><th colspan="2">Member Detail</th></tr><tr><td>Member</td><td>${m.name}</td></tr><tr><td>Savings balance</td><td><span class="balance">${m.savings}</span></td></tr></table><p><button onclick="go('subaccount',{member:'${id}'})">Open new sub-account</button></p>`;}
+ else if(route==='subaccount'){let id=q.get('member');box().innerHTML=`<form><input type="hidden" name="member" value="${id}"><table><tr><td><label>Product <select name="product"><option value="savings">Secondary Savings</option><option value="holiday">Holiday Club</option></select></label></td></tr><tr><td><label>Opening deposit <input name="deposit" value="25.00"></label></td></tr></table><button type="submit">Review account</button></form>`; box().querySelector('form').onsubmit=e=>{e.preventDefault();go('review',{member:e.target.member.value,product:e.target.product.value,deposit:e.target.deposit.value})};}
+ else if(route==='review'){box().innerHTML=`<h3>Confirmation Review</h3><table><tr><td>Member</td><td>${q.get('member')}</td></tr><tr><td>Product</td><td>${q.get('product')}</td></tr><tr><td>Opening deposit</td><td>${q.get('deposit')}</td></tr></table><p class="notice">Final submission creates a record in this demo.</p><button onclick="go('complete')">Submit and create account</button>`;}
+ else if(route==='complete'){box().innerHTML=`<h3>Account created</h3><p>Demo confirmation #DEMO-001</p>`;}
+ else if(route==='error'){box().innerHTML=`<div class="error">Application error: simulated backend failure.</div>`;}
+}
+render();
+</script></body></html>

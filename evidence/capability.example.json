@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "cap_4353f89f5e",
+  "capability_version": "1.0.0",
+  "name": "lookup_member_balance",
+  "description": "Look up member {{member_id}} and read their current savings balance",
+  "app_id": "legacy-bank-demo",
+  "vendor_product": "Acme Legacy Core",
+  "tenant_variant": "base",
+  "entrypoint": "demo://legacy-bank#home",
+  "allowed_origins": [
+    "demo://legacy-bank"
+  ],
+  "parameters": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "description": "Invocation value for member_id",
+      "sensitive": true,
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "Value extracted as savings_balance",
+      "sensitive": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "s01",
+      "action": "type",
+      "target": {
+        "description": "Member Number",
+        "strategies": [
+          {
+            "kind": "label",
+            "value": "Member Number",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "name",
+            "value": "member",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "css",
+            "value": "input[name=\"member\"]",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": "{{member_id}}",
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s02",
+      "action": "click",
+      "target": {
+        "description": "Find Member",
+        "strategies": [
+          {
+            "kind": "role",
+            "value": "Find Member",
+            "role": "button",
+            "exact": true
+          },
+          {
+            "kind": "text",
+            "value": "Find Member",
+            "role": null,
+            "exact": true
+          },
+          {
+            "kind": "css",
+            "value": "button[type=\"submit\"]",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": null,
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    },
+    {
+      "id": "s03",
+      "action": "read",
+      "target": {
+        "description": "output:savings_balance",
+        "strategies": [
+          {
+            "kind": "css",
+            "value": "span.balance",
+            "role": null,
+            "exact": true
+          }
+        ]
+      },
+      "value": null,
+      "output": "savings_balance",
+      "risk": "safe",
+      "checkpoint": null,
+      "timeout_ms": 5000,
+      "retries": 1,
+      "notes": ""
+    }
+  ],
+  "success_checkpoint": {
+    "kind": "text_visible",
+    "value": "Savings balance",
+    "target": null
+  },
+  "approved_for_unattended_replay": false,
+  "metadata": {
+    "recording": "llm_discovery",
+    "locator_policy": "ordered semantic locator bundle; no ephemeral IDs"
+  }
+}

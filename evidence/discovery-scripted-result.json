@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "capability_id": "cap_4353f89f5e",
+  "outputs": {
+    "savings_balance": "$4,281.73"
+  },
+  "outcome_code": null,
+  "message": "discovery goal completed",
+  "failure_class": null,
+  "step_id": null,
+  "expected": null,
+  "observed": null,
+  "evidence": {}
+}

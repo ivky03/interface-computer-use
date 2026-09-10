@@ -1,0 +1,4 @@
+{"ts": 1788990886.7622252, "event": "step_start", "step_id": "s01", "action": "read", "target": "output:savings_balance"}
+{"ts": 1788990886.8082352, "event": "recovered", "step_id": "s01", "code": "SESSION_EXPIRED", "recovery_count": 1}
+{"ts": 1788990886.8184254, "event": "step_ok", "step_id": "s01", "url": "about:blank#member?member=[PARAM:member_id]&scenario=expired"}
+{"ts": 1788990886.8235214, "event": "finish", "outputs": {"savings_balance": "[REDACTED]"}}

@@ -1,0 +1,12 @@
+{"ts": 1788990886.3245027, "event": "observe", "step": 0, "url": "about:blank#home", "title": "Acme Legacy Core", "element_count": 2, "elements": [{"eid": "e1", "tag": "input", "name": "member", "labels": ["Member Number"]}, {"eid": "e2", "tag": "button", "type": "submit", "role": "button"}]}
+{"ts": 1788990886.3246217, "event": "decision", "step": 0, "decision": {"action": "type", "element_id": "e1", "value": "[PARAM:member_id]", "reason": "enter invocation parameter"}}
+{"ts": 1788990886.3576388, "event": "acted", "step": 0, "action": "type", "url": "about:blank#home"}
+{"ts": 1788990886.3641734, "event": "observe", "step": 1, "url": "about:blank#home", "title": "Acme Legacy Core", "element_count": 2, "elements": [{"eid": "e1", "tag": "input", "name": "member", "labels": ["Member Number"]}, {"eid": "e2", "tag": "button", "type": "submit", "role": "button"}]}
+{"ts": 1788990886.364229, "event": "decision", "step": 1, "decision": {"action": "click", "element_id": "e2", "reason": "submit lookup"}}
+{"ts": 1788990886.4688008, "event": "acted", "step": 1, "action": "click", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1788990886.4753864, "event": "observe", "step": 2, "url": "about:blank#member?member=[PARAM:member_id]", "title": "Acme Legacy Core", "element_count": 2, "elements": [{"eid": "e1", "tag": "span"}, {"eid": "e2", "tag": "button", "role": "button"}]}
+{"ts": 1788990886.4754422, "event": "decision", "step": 2, "decision": {"action": "read", "element_id": "e1", "output": "savings_balance", "reason": "extract declared output"}}
+{"ts": 1788990886.4894457, "event": "acted", "step": 2, "action": "read", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1788990886.493317, "event": "observe", "step": 3, "url": "about:blank#member?member=[PARAM:member_id]", "title": "Acme Legacy Core", "element_count": 2, "elements": [{"eid": "e1", "tag": "span"}, {"eid": "e2", "tag": "button", "role": "button"}]}
+{"ts": 1788990886.4933586, "event": "decision", "step": 3, "decision": {"action": "finish", "outputs": {}, "reason": "goal met"}}
+{"ts": 1788990886.4966195, "event": "finish", "outputs": {"savings_balance": "[REDACTED]"}, "artifact_id": "cap_4353f89f5e"}

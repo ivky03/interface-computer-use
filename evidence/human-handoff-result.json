@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "capability_id": "cap_open_subaccount_human_commit",
+  "outputs": {},
+  "outcome_code": null,
+  "message": "deterministic replay completed",
+  "failure_class": null,
+  "step_id": null,
+  "expected": null,
+  "observed": null,
+  "evidence": {}
+}
