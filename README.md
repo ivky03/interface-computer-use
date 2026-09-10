@@ -43,7 +43,7 @@ Python 3.11+ is recommended.
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\\Scripts\\activate
 pip install -e '.[dev]'
-playwright install chromium
+python3 -m playwright install chromium
 ```
 
 For a genuine LLM discovery run, provide your own Gemini key as an environment variable. It is never written to the artifact or logs. The default model is `gemini-2.5-flash`; set `GEMINI_MODEL` to override it with a compatible Gemini model.
@@ -59,7 +59,7 @@ export GEMINI_API_KEY='...'
 ### 1. Run the required genuine LLM discovery
 
 ```bash
-cua discover \
+python3 -m cua.cli discover \
   --goal "Look up member 12345 and read their current savings balance" \
   --target 'demo://legacy-bank#home' \
   --inputs '{"member_id":"12345"}' \
@@ -76,7 +76,7 @@ The discovery UI element IDs are deliberately ephemeral. They never appear in th
 ### 2. Replay the same artifact with a different invocation
 
 ```bash
-cua replay \
+python3 -m cua.cli replay \
   --artifact evidence/capability.json \
   --inputs '{"member_id":"24680"}'
 ```
@@ -93,7 +93,7 @@ Expected output includes:
 ### 3. Exercise a legitimate business outcome
 
 ```bash
-cua replay \
+python3 -m cua.cli replay \
   --artifact evidence/capability.json \
   --inputs '{"member_id":"99999"}'
 ```
@@ -105,7 +105,7 @@ Expected contract: `status=business_outcome`, `outcome_code=MEMBER_NOT_FOUND`. T
 A ready-to-run human-gated artifact is included:
 
 ```bash
-cua replay \
+python3 -m cua.cli replay \
   --headed \
   --artifact evidence/capability.human-gate.example.json \
   --inputs '{"member_id":"12345","product":"holiday","deposit":"25.00"}'
@@ -116,7 +116,7 @@ Automation prepares the confirmation page, then transfers the control lease to t
 ## Tests
 
 ```bash
-pytest -q
+python3 -m pytest -q
 ```
 
 The suite currently contains **32 tests** covering the core and adversarial paths, including:

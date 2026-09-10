@@ -18,7 +18,9 @@ Do not quote or repeat PII, balances, credentials, or other observed data in the
 {"action":"read","element_id":"eN","output":"name","reason":"..."}
 {"action":"finish","outputs":{"key":"value"},"reason":"goal met"}
 {"action":"escalate","reason":"..."}
-If the goal asks to return/extract a value, use a read action on the specific output element before finish; do not merely copy it from visible_text into finish. Do not perform a final irreversible commit if the stated goal only asks to reach review/confirmation."""
+If the goal asks to return/extract a value, use a read action on the specific output element before finish; do not merely copy it from visible_text into finish.
+Once a required output has already been read successfully, DO NOT read that same output again. If all parts of the goal are satisfied, immediately return {"action":"finish","outputs":{},"reason":"goal met"}. The executor already retains values obtained by prior read actions.
+Do not perform a final irreversible commit if the stated goal only asks to reach review/confirmation."""
 
 
 @dataclass

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "capability_id": "cap_5b300d0369",
+  "capability_id": "cap_75d2ad1454",
   "capability_version": "1.0.0",
   "name": "lookup_member_balance",
   "description": "Look up member {{member_id}} and read their current savings balance",
@@ -99,94 +99,6 @@
     },
     {
       "id": "s03",
-      "action": "read",
-      "target": {
-        "description": "output:savings_balance",
-        "strategies": [
-          {
-            "kind": "css",
-            "value": "span.balance",
-            "role": null,
-            "exact": true
-          }
-        ]
-      },
-      "value": null,
-      "output": "savings_balance",
-      "risk": "safe",
-      "checkpoint": null,
-      "timeout_ms": 5000,
-      "retries": 1,
-      "notes": ""
-    },
-    {
-      "id": "s04",
-      "action": "read",
-      "target": {
-        "description": "output:savings_balance",
-        "strategies": [
-          {
-            "kind": "css",
-            "value": "span.balance",
-            "role": null,
-            "exact": true
-          }
-        ]
-      },
-      "value": null,
-      "output": "savings_balance",
-      "risk": "safe",
-      "checkpoint": null,
-      "timeout_ms": 5000,
-      "retries": 1,
-      "notes": ""
-    },
-    {
-      "id": "s05",
-      "action": "read",
-      "target": {
-        "description": "output:savings_balance",
-        "strategies": [
-          {
-            "kind": "css",
-            "value": "span.balance",
-            "role": null,
-            "exact": true
-          }
-        ]
-      },
-      "value": null,
-      "output": "savings_balance",
-      "risk": "safe",
-      "checkpoint": null,
-      "timeout_ms": 5000,
-      "retries": 1,
-      "notes": ""
-    },
-    {
-      "id": "s06",
-      "action": "read",
-      "target": {
-        "description": "output:savings_balance",
-        "strategies": [
-          {
-            "kind": "css",
-            "value": "span.balance",
-            "role": null,
-            "exact": true
-          }
-        ]
-      },
-      "value": null,
-      "output": "savings_balance",
-      "risk": "safe",
-      "checkpoint": null,
-      "timeout_ms": 5000,
-      "retries": 1,
-      "notes": ""
-    },
-    {
-      "id": "s07",
       "action": "read",
       "target": {
         "description": "output:savings_balance",

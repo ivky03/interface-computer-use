@@ -28,3 +28,10 @@
 {"ts": 1789082655.4464462, "event": "step_start", "step_id": "s07", "action": "human_gate", "target": "Submit and create account"}
 {"ts": 1789082665.9791842, "event": "human_handoff", "step_id": "s07", "request_id": "b1c3bbfd", "actions": [{"type": "click", "tag": "BUTTON", "text": "Submit and create account", "ts": 1789082662836}]}
 {"ts": 1789082665.992249, "event": "finish", "outputs": {}}
+{"ts": 1789083917.015033, "event": "step_start", "step_id": "s01", "action": "type", "target": "Member Number"}
+{"ts": 1789083917.0736792, "event": "step_ok", "step_id": "s01", "url": "about:blank#home"}
+{"ts": 1789083917.073822, "event": "step_start", "step_id": "s02", "action": "click", "target": "Find Member"}
+{"ts": 1789083917.19791, "event": "step_ok", "step_id": "s02", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789083917.1981041, "event": "step_start", "step_id": "s03", "action": "read", "target": "output:savings_balance"}
+{"ts": 1789083917.2165592, "event": "step_ok", "step_id": "s03", "url": "about:blank#member?member=[PARAM:member_id]"}
+{"ts": 1789083917.220476, "event": "finish", "outputs": {"savings_balance": "[REDACTED]"}}
